@@ -44,22 +44,6 @@ php artisan migrate
 ```bash
 php artisan serve
 ```
-API is now at `http://localhost:8000`
-
----
-
-## Frontend
-
-Your React frontend is **unchanged** — just update `vite.config.js`:
-
-```js
-proxy: {
-  '/api': {
-    target: 'http://localhost:8000',  // was 8080
-    changeOrigin: true,
-  },
-},
-```
 
 Then:
 ```bash
