@@ -19,9 +19,9 @@ class Task extends Model
     ];
 
     const CATEGORY_DISPLAY_NAMES = [
-        'STUDIES'  => 'Études',
-        'WORK'     => 'Travail',
-        'PERSONAL' => 'Personnel',
+        'STUDIES'  => 'Studies',
+        'WORK'     => 'Work',
+        'PERSONAL' => 'Personal',
     ];
 
     public function user()
