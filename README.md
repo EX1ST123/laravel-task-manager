@@ -27,7 +27,9 @@ Make sure the following are installed before running the project:
 
 1. Copy the environment file:
 ```bash
-cp .env.example .env
+copy .env.example .env (Windows)
+
+cp .env.example .env (Linux)
 ```
 
 2. Open `.env` and fill in your MySQL credentials:
