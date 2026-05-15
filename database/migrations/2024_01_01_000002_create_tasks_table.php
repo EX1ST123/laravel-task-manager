@@ -9,14 +9,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('priority')->default('MEDIUM');  // LOW | MEDIUM | HIGH
-            $table->string('status')->default('TODO');       // TODO | IN_PROGRESS | DONE
-            $table->string('category');                      // STUDIES | WORK | PERSONAL
+            $table->enum('priority', ['LOW', 'MEDIUM', 'HIGH']);
+            $table->enum('status', ['TODO', 'IN_PROGRESS', 'DONE'])->default('TODO');
+            $table->enum('category', ['STUDIES', 'WORK', 'PERSONAL']);
             $table->timestamps();
+            $table->index(['user_id', 'created_at']);
         });
     }
 
